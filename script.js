@@ -50,27 +50,118 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Language switching functionality
-let currentLanguage = 'en';
+// Language and theme state management
+let currentLang = 'en';
+let currentTheme = 'light';
 
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'tr' : 'en';
-    updateLanguage();
-    updateLanguageButton();
+// DOM Elements
+const htmlElement = document.documentElement;
+const themeBtn = document.querySelector('.theme-btn');
+const langBtn = document.querySelector('.lang-btn');
+
+// Language translations
+const translations = {
+    en: {
+        'nav-home': 'Home',
+        'nav-products': 'Products',
+        'nav-about': 'About',
+        'nav-contact': 'Contact',
+        'hero-title': 'Welcome to Our Store',
+        'hero-subtitle': 'Discover amazing products at great prices',
+        'products-title': 'Our Products',
+        'about-title': 'About Us',
+        'about-text': 'We are dedicated to providing the best products and service to our customers.',
+        'contact-title': 'Contact Us',
+        'contact-name': 'Name',
+        'contact-email': 'Email',
+        'contact-message': 'Message',
+        'contact-send': 'Send Message',
+        'footer-text': '© 2024 Your Store. All rights reserved.'
+    },
+    tr: {
+        'nav-home': 'Ana Sayfa',
+        'nav-products': 'Ürünler',
+        'nav-about': 'Hakkımızda',
+        'nav-contact': 'İletişim',
+        'hero-title': 'Mağazamıza Hoş Geldiniz',
+        'hero-subtitle': 'Harika ürünleri uygun fiyatlarla keşfedin',
+        'products-title': 'Ürünlerimiz',
+        'about-title': 'Hakkımızda',
+        'about-text': 'Müşterilerimize en iyi ürün ve hizmeti sunmaya kendimizi adadık.',
+        'contact-title': 'İletişim',
+        'contact-name': 'İsim',
+        'contact-email': 'E-posta',
+        'contact-message': 'Mesaj',
+        'contact-send': 'Mesaj Gönder',
+        'footer-text': '© 2024 Mağazanız. Tüm hakları saklıdır.'
+    }
+};
+
+// Theme toggle functionality
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    themeBtn.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+    localStorage.setItem('theme', currentTheme);
 }
 
-function updateLanguage() {
-    // Update all elements with data-en and data-tr attributes
+// Language switch functionality
+function switchLanguage() {
+    currentLang = currentLang === 'en' ? 'tr' : 'en';
+    langBtn.textContent = currentLang.toUpperCase();
+    updateContent();
+    localStorage.setItem('lang', currentLang);
+}
+
+// Update content based on selected language
+function updateContent() {
     document.querySelectorAll('[data-en]').forEach(element => {
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.placeholder = element.getAttribute(`data-${currentLanguage}-placeholder`);
-        } else {
-            element.textContent = element.getAttribute(`data-${currentLanguage}`);
+        const key = element.getAttribute('data-en');
+        if (translations[currentLang][key]) {
+            element.textContent = translations[currentLang][key];
         }
     });
 }
 
-function updateLanguageButton() {
-    const langText = document.querySelector('.lang-text');
-    langText.textContent = currentLanguage === 'en' ? 'TR' : 'EN';
-} 
+// Initialize theme and language from localStorage
+function initializeState() {
+    const savedTheme = localStorage.getItem('theme');
+    const savedLang = localStorage.getItem('lang');
+    
+    if (savedTheme) {
+        currentTheme = savedTheme;
+        htmlElement.setAttribute('data-theme', currentTheme);
+        themeBtn.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+    }
+    
+    if (savedLang) {
+        currentLang = savedLang;
+        langBtn.textContent = currentLang.toUpperCase();
+        updateContent();
+    }
+}
+
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+// Event Listeners
+themeBtn.addEventListener('click', toggleTheme);
+langBtn.addEventListener('click', switchLanguage);
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    initializeState();
+}); 

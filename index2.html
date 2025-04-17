@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Welcome to Our Store" data-tr="Mağazamıza Hoş Geldiniz">Mağazamıza Hoş Geldiniz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1 data-en="Our Store" data-tr="Mağazamız">Mağazamız</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" data-en="Home" data-tr="Ana Sayfa">Ana Sayfa</a>
+                <a href="#products" data-en="Products" data-tr="Ürünler">Ürünler</a>
+                <a href="#about" data-en="About" data-tr="Hakkımızda">Hakkımızda</a>
+                <a href="#contact" data-en="Contact" data-tr="İletişim">İletişim</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="theme-btn" onclick="toggleTheme()">☀️</button>
+                <button class="lang-btn" onclick="toggleLanguage()"><span>TR</span></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2 data-en="Welcome to Our Store" data-tr="Mağazamıza Hoş Geldiniz">Mağazamıza Hoş Geldiniz</h2>
+            <p data-en="Discover our amazing products" data-tr="Harika ürünlerimizi keşfedin">Harika ürünlerimizi keşfedin</p>
+        </section>
+
+        <section id="products">
+            <h2 data-en="Our Products" data-tr="Ürünlerimiz">Ürünlerimiz</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/auger-drill.jpg" alt="Auger Drill Bit" data-en-alt="Auger Drill Bit" data-tr-alt="Matkap Ucu">
+                    <h3 data-en="Auger Drill Bit" data-tr="Matkap Ucu">Matkap Ucu</h3>
+                    <p data-en="Professional grade auger drill bit for wood and metal" data-tr="Ahşap ve metal için profesyonel sınıf matkap ucu">Ahşap ve metal için profesyonel sınıf matkap ucu</p>
+                    <button data-en="Buy Now" data-tr="Şimdi Satın Al">Şimdi Satın Al</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/screw-set.jpg" alt="Screw Set" data-en-alt="Screw Set" data-tr-alt="Vida Seti">
+                    <h3 data-en="Professional Screw Set" data-tr="Profesyonel Vida Seti">Profesyonel Vida Seti</h3>
+                    <p data-en="Complete set of screws for various assembly needs" data-tr="Çeşitli montaj ihtiyaçları için tam vida seti">Çeşitli montaj ihtiyaçları için tam vida seti</p>
+                    <button data-en="Buy Now" data-tr="Şimdi Satın Al">Şimdi Satın Al</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/drill-bits.jpg" alt="Drill Bits Set" data-en-alt="Drill Bits Set" data-tr-alt="Matkap Uçları Seti">
+                    <h3 data-en="Drill Bits Set" data-tr="Matkap Uçları Seti">Matkap Uçları Seti</h3>
+                    <p data-en="Comprehensive set of drill bits for all materials" data-tr="Tüm malzemeler için kapsamlı matkap uçları seti">Tüm malzemeler için kapsamlı matkap uçları seti</p>
+                    <button data-en="Buy Now" data-tr="Şimdi Satın Al">Şimdi Satın Al</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/tool-kit.jpg" alt="Assembly Tool Kit" data-en-alt="Assembly Tool Kit" data-tr-alt="Montaj Alet Seti">
+                    <h3 data-en="Assembly Tool Kit" data-tr="Montaj Alet Seti">Montaj Alet Seti</h3>
+                    <p data-en="Complete toolkit for professional assembly work" data-tr="Profesyonel montaj işleri için tam alet seti">Profesyonel montaj işleri için tam alet seti</p>
+                    <button data-en="Buy Now" data-tr="Şimdi Satın Al">Şimdi Satın Al</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 data-en="About Us" data-tr="Hakkımızda">Hakkımızda</h2>
+            <p data-en="We are a company dedicated to providing the best products and services to our customers." 
+               data-tr="Biz, müşterilerimize en iyi ürün ve hizmetleri sunmaya adanmış bir şirketiz.">
+                Biz, müşterilerimize en iyi ürün ve hizmetleri sunmaya adanmış bir şirketiz.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2 data-en="Contact Us" data-tr="İletişim">İletişim</h2>
+            <form>
+                <input type="text" placeholder="Name" data-en-placeholder="Name" data-tr-placeholder="İsim">
+                <input type="email" placeholder="Email" data-en-placeholder="Email" data-tr-placeholder="E-posta">
+                <textarea placeholder="Message" data-en-placeholder="Message" data-tr-placeholder="Mesaj"></textarea>
+                <button type="submit" data-en="Send" data-tr="Gönder">Gönder</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p data-en="© 2024 Our Store. All rights reserved." 
+           data-tr="© 2024 Mağazamız. Tüm hakları saklıdır.">
+            © 2024 Mağazamız. Tüm hakları saklıdır.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
