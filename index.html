@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Kits - Premium Car Accessories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Car Kits</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-tr="Ana Sayfa">Home</a></li>
+                <li><a href="#products" data-en="Products" data-tr="Ürünler">Products</a></li>
+                <li><a href="#about" data-en="About" data-tr="Hakkımızda">About</a></li>
+                <li><a href="#contact" data-en="Contact" data-tr="İletişim">Contact</a></li>
+            </ul>
+            <div class="toggle-buttons">
+                <button id="theme-toggle" class="toggle-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="lang-toggle" class="toggle-btn">
+                    <span data-en="EN" data-tr="TR">EN</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1 data-en="Premium Car Accessories" data-tr="Premium Araç Aksesuarları">Premium Car Accessories</h1>
+            <p data-en="Enhance your driving experience with our quality products" data-tr="Kaliteli ürünlerimizle sürüş deneyiminizi geliştirin">Enhance your driving experience with our quality products</p>
+            <a href="#products" class="cta-button" data-en="Shop Now" data-tr="Alışverişe Başla">Shop Now</a>
+        </section>
+
+        <section id="products" class="products">
+            <h2 data-en="Featured Products" data-tr="Öne Çıkan Ürünler">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <i class="fas fa-car-battery"></i>
+                    <h3 data-en="Car Battery" data-tr="Araç Aküsü">Car Battery</h3>
+                    <p data-en="High-performance batteries for all vehicles" data-tr="Tüm araçlar için yüksek performanslı aküler">High-performance batteries for all vehicles</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-tools"></i>
+                    <h3 data-en="Tool Kit" data-tr="El Aletleri">Tool Kit</h3>
+                    <p data-en="Complete set of essential car tools" data-tr="Temel araç aletleri tam set">Complete set of essential car tools</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-car"></i>
+                    <h3 data-en="Accessories" data-tr="Aksesuarlar">Accessories</h3>
+                    <p data-en="Stylish and functional car accessories" data-tr="Şık ve fonksiyonel araç aksesuarları">Stylish and functional car accessories</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2 data-en="About Us" data-tr="Hakkımızda">About Us</h2>
+            <p data-en="Car Kits is your one-stop shop for premium car accessories. We provide high-quality products to enhance your driving experience." data-tr="Car Kits, premium araç aksesuarları için tek adresinizdir. Sürüş deneyiminizi geliştirmek için yüksek kaliteli ürünler sunuyoruz.">Car Kits is your one-stop shop for premium car accessories. We provide high-quality products to enhance your driving experience.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 data-en="Contact Us" data-tr="İletişim">Contact Us</h2>
+            <p class="contact-subtitle" data-en="Contact us for orders and inquiries" data-tr="Siparişler ve bilgi için bizimle iletişime geçin">Contact us for orders and inquiries</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" data-en-placeholder="Name" data-tr-placeholder="İsim" required>
+                <input type="email" placeholder="Email" data-en-placeholder="Email" data-tr-placeholder="E-posta" required>
+                <textarea placeholder="Message" data-en-placeholder="Message" data-tr-placeholder="Mesaj" required></textarea>
+                <button type="submit" class="cta-button" data-en="Send Message" data-tr="Mesaj Gönder">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Car Kits. <span data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
